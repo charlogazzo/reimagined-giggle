@@ -1,0 +1,22 @@
+[
+  {
+    "code": "AL",
+    "name": "Albania",
+    "length": 28
+  },
+  {
+    "code": "AD",
+    "name": "Andorra",
+    "length": 24
+  },
+  {
+    "code": "AT",
+    "name": "Austria",
+    "length": 20
+  },
+  {
+    "code": "DE",
+    "name": "Germany",
+    "length": 22
+  }
+]
