@@ -5,7 +5,6 @@ import com.foreshock.SDAInvoiceScanner.downloader.PDFDownloader;
 import com.foreshock.SDAInvoiceScanner.parser.PDFReader;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -26,11 +25,9 @@ public class InvoiceScannerService {
     private final PDFReader pdfReader;
     private final PDFDownloader pdfDownloader;
     private final IBANCheckerService ibanCheckerService;
-    RestTemplate restTemplate;
 
-    public InvoiceScannerService(IBANCheckerService ibanCheckerService, PDFReader pdfReader, RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-        this.pdfDownloader = new PDFDownloader(restTemplate);
+    public InvoiceScannerService(IBANCheckerService ibanCheckerService, PDFReader pdfReader, PDFDownloader pdfDownloader) {
+        this.pdfDownloader = pdfDownloader;
         this.ibanCheckerService = ibanCheckerService;
         this.pdfReader = pdfReader;
     }
